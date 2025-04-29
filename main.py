@@ -217,7 +217,10 @@ def train() -> tuple[list[float], list[float], list[float], list[float]]:
 def plot_training_curves(train_losses: list[float],
                          train_accuracies: list[float],
                          validation_losses: list[float],
-                         validation_accuracies: list[float]):
+                         validation_accuracies: list[float],
+                         loss_filename='loss.png',
+                         accuracy_filename='accuracy.png'
+                         ):
     epochs = list(range(1, len(train_losses) + 1))
     plt.figure()
     plt.plot(epochs, train_losses, label='Train loss')
@@ -226,7 +229,7 @@ def plot_training_curves(train_losses: list[float],
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
     plt.legend()
-    plt.savefig('loss.png')
+    plt.savefig(loss_filename)
     plt.figure()
     plt.plot(epochs, train_accuracies, label='Train accuracy')
     plt.plot(epochs, validation_accuracies, label='Validation accuracy')
@@ -234,7 +237,7 @@ def plot_training_curves(train_losses: list[float],
     plt.xlabel('Epoch')
     plt.ylabel('Accuracy')
     plt.legend()
-    plt.savefig('accuracy.png')
+    plt.savefig(accuracy_filename)
     print('Loss and accuracy curves saved as `loss.png` and `accuracy.png`.')
 
 
