@@ -17,3 +17,4 @@ You can load models by setting the `LOAD_MODEL` param to true and using the path
 Batch size, lr, weight decay parameters are as listed in the params.
 
 ## SNN
+`snn.ipynb` contains the code to train the SNN model on the SEED dataset, save the trained model, and plot loss and accuracy curves for the training.
